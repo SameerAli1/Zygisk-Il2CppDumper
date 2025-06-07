@@ -1,11 +1,5 @@
-name: Build
-on:
-  workflow_dispatch:
-      inputs:
-        package_name:
-          description: "Package name of the game:"
-          required: true
-
+name: Deploy Workflow
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
