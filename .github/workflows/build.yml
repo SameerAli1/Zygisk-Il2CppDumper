@@ -1,11 +1,10 @@
-name: Build
-on:
-  workflow_dispatch:
-      inputs:
-        package_name:
-          description: "Package name of the game:"
-          required: true
-
+- name: Use node
+  uses: actions/setup-node@v2
+  with:
+    node-version: '12.13.0'
+    check-latest: true
+- name: Install dependencies
+  run: npm ci                                                                                                                                                   
 jobs:
   build:
     runs-on: ubuntu-latest
